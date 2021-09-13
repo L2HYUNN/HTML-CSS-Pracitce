@@ -1,36 +1,37 @@
 html {
-  font-family: sans-serif;
+  padding: 10px 10px;
 }
 
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(200, 200, 200);
-  letter-spacing: 1px;
-  font-size: 0.8rem;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-td,
-th {
-  border: 1px solid rgb(190, 190, 190);
-  padding: 10px 20px;
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  list-style-type: none;
 }
 
-th {
-  background-color: rgb(235, 235, 235);
+li.home a {
+  color: red;
+  font-weight: bold;
 }
 
-td {
-  text-align: center;
+header + nav a {
+  font-size: 200%;
+  color: brown;
 }
 
-tr:nth-child(even) td {
-  background-color: rgb(250, 250, 250);
+ul *:first-child {
+  color: aqua;
 }
 
-tr:nth-child(odd) td {
-  background-color: rgb(245, 245, 245);
-}
-
-caption {
-  padding: 10px;
+.box-one {
+  background-color: aquamarine;
+  width: 100px;
+  height: 100px;
 }

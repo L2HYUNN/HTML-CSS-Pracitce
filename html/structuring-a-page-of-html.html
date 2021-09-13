@@ -54,6 +54,12 @@
 
           <a href="favorite-1.jpg"
             ><img
+              srcset="
+                favorite-1_th.jpg 400w,
+                favorite-2_th.jpg 500w
+              "
+              sizes="(max-width: 400px) 400px
+                      500px"
               src="favorite-1_th.jpg"
               alt="Small black bird, black claws, long black slender beak, links to larger version of the image"
           /></a>
@@ -79,6 +85,19 @@
             height="171"
             title="we can do this ohoh"
           />
+          <figure>
+            <img
+              src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+              alt="The head and torso of a dinosaur skeleton;
+                      it has a large head with long sharp teeth"
+              width="200"
+              height="171"
+            />
+
+            <figcaption>
+              A T-Rex on display in the Manchester University Museum.
+            </figcaption>
+          </figure>
         </aside>
       </article>
     </main>

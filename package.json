@@ -1,0 +1,19 @@
+{
+  "name": "html-css-pracitce",
+  "description": "For Html Css Practice",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L2HYUNN/HTML-CSS-Pracitce.git"
+  },
+  "author": "GreenIdeology",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/L2HYUNN/HTML-CSS-Pracitce/issues"
+  },
+  "homepage": "https://github.com/L2HYUNN/HTML-CSS-Pracitce#readme"
+}

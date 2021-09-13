@@ -17,3 +17,7 @@ JavaScript is a programming language that adds interactivity to your website. Th
 
 > Note: The reason the instructions (above) place the `<script> `element near the bottom of the HTML file is that the browser reads code **in the order it appears in the file**. <br/>
 > If the JavaScript loads first and it is supposed to affect the HTML that hasn't loaded yet, there could be problems. Placing JavaScript near the bottom of an HTML page is one way to accommodate this dependency. To learn more about alternative approaches, see Script loading strategies.
+
+You did this by using a function called querySelector() to grab a reference to your heading, and then store it in a variable called myHeading. This is similar to what we did using CSS selectors. When you want to do something to an element, you need to select it first.
+
+**Note: Both of the features you used in this exercise are parts of the [Document Object Model (DOM) API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model), which has the capability to manipulate documents.**

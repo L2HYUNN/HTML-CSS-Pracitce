@@ -1,12 +1,19 @@
-var object1 = {
-    arrays : [1, 2, 3]
-}
-
-console.log(object1.arrays);
-
-const functionNameAdd = (n1, n2) => {
-    var sum = n1 + n2;
-    return sum;
-}
-
-console.log(functionNameAdd(3, 5))
+var family = {
+    address: 'Seoul',
+    members: {},
+    addFamily: function(age, name, role) {
+      this.members[role] = {
+        age,
+        name
+      };
+    },
+    getHeadcount: function() {
+      return Object.keys(this.members).length;
+    }
+  };
+  
+  family.addFamily(30, 'chloe', 'aunt');
+  family.addFamily(3, 'lyn', 'niece');
+  family.addFamily(10, 'dangdangi', 'dog');
+  console.log(family.members);
+  console.log(family.getHeadcount());

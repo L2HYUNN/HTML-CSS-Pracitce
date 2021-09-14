@@ -1,31 +1,29 @@
-var obj = {a: 1, b: 10, c: 30, d: 50, e: 100};
+const symbol = Symbol()
+const hello = Symbol('hello');
+console.log(symbol, hello);
 
-var {a, c} = obj;
-console.log(`a and c = ${a}, ${c}`);
+console.log('Number(3) === Number(3):');
+console.log(Number(3) === Number(3));
 
-var {a: NewA=10, f: NewF=5000} = obj
-console.log(`newA and newF = ${NewA} and ${NewF}`)
+console.log(Symbol('symbol') === Symbol('symbol'));
+console.log(Symbol() === Symbol());
+console.log(typeof Symbol());
 
-console.log(obj);
+const nationility = Symbol('nationility');
+const user = {
+  name: 'jay'
+};
+user[nationility] = 'korean';
+console.log(user[nationility]);
 
-var {NewA=100, f: NewF=5000} = obj
-console.log(`newA and newF = ${NewA} and ${NewF}`)
-
-// 배열의 비구조화 할당
-
-var arr = [1, 3, 30 ,50 ,25];
-
-var [b, c, ...rest] = arr;
-console.log(`b and c and rest = ${b}, ${c}, ${rest}`);
-
-var [a=10, f=20] = [1];
-console.log(`a and f = ${a}, ${f}`);
-
-[a, f] = [f, a];
-console.log(`a and f = ${a}, ${f}`); 
-
-function getArr() {
-  return [1, 2, 3, 4, 5, 6];  
+for (let key in user) {
+  console.log(key);
 }
-[a, , , , ,f] = getArr();
-console.log(`a and f = ${a}, ${f}`); 
+
+console.log(Object.keys(user));
+console.log(Object.getOwnPropertyNames(user));
+console.log(JSON.stringify(user));
+
+const symbolProperties = Object.getOwnPropertySymbols(user);
+console.log(symbolProperties);
+console.log(user[symbolProperties[0]]);

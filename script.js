@@ -1,24 +1,50 @@
-function sum(...args) {
-  var total = 0;
-  for ( var n = 0; n < args.length; n++ ) {
-    total += args[n];
-  }
-  console.log(args.indexOf(1));
-  return total;
-  
+/*
+var sayName;
+
+sayName();
+
+sayName = function(){
+  console.log('yuddomack');
 }
 
-var sumOf1to3 = sum(1, 2, 3);
-console.log(sumOf1to3);
+sayName();
 
-function sum2(a, b, ...others) {
-  var total = a + b;
-  for ( var n = 0; n < others.length; n++ ) {
-    total += others[n];
-  }
-  return total;
+var sayName = function(){
+  console.log('yuddomack');
+}
+*/ 
+// var 변수의 호읻스팅 및 함수 변수 우선순위
+
+
+var myName = "hi";
+
+function myName() {
+  console.log("yuddomack");
+}
+function yourName() {
+  console.log("everyone");
 }
 
-console.log(sum2(1,2))
-console.log(sum2(1,2,3,4))
+var yourName = "bye";
+
+console.log(typeof myName);
+console.log(typeof yourName);
+
+// 결과 아래) 
+
+
+var myName;
+var yourName;
+function myName() {
+  console.log("yuddomack");
+}
+function yourName() {
+  console.log("everyone");
+}
+
+myName = "hi";
+yourName = "bye";
+
+console.log(typeof myName);
+console.log(typeof yourName);
 

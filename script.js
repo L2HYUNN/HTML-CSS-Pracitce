@@ -1,21 +1,24 @@
-function sum() {
+function sum(...args) {
   var total = 0;
-  for ( var n = 0; n < arguments.length; n++ ) {
-    total += arguments[n];
+  for ( var n = 0; n < args.length; n++ ) {
+    total += args[n];
   }
-  console.log(arguments instanceof Array);
+  console.log(args.indexOf(1));
   return total;
+  
 }
 
 var sumOf1to3 = sum(1, 2, 3);
 console.log(sumOf1to3);
 
-function testarg() {
-  var oldArr = arguments;
-  var newArr = Array.prototype.slice.call(arguments);
-  console.log(`oldArr = ${oldArr}, newArr = ${newArr}`);
-  console.log(newArr.indexOf('b'));
-  console.log(arguments.indexOf('b'));
+function sum2(a, b, ...others) {
+  var total = a + b;
+  for ( var n = 0; n < others.length; n++ ) {
+    total += others[n];
+  }
+  return total;
 }
 
-testarg('a', 'b');
+console.log(sum2(1,2))
+console.log(sum2(1,2,3,4))
+

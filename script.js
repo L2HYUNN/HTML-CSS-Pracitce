@@ -1,42 +1,33 @@
-let user = {
-  name: "jeado"
-};
-let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
-console.log(descriptor);
-
-let user2 = {};
-Object.defineProperty(user2, 'name', 
-  {
-    value: 'jeado',
-    writable: false,
-    enumerable: true,
-    configurable: true
-  }
-);
-console.log(user2.name);
-user2.name = 'bbo';
-console.log(user2.name);
-
-let user3 = {
-  name: 'jeado',
-  toString() {
-    return this.name;
-  }
-};
-console.log(user3);
-Object.defineProperty(user3, 'toString', {
-  enumerable: false
+let user = {};
+Object.defineProperty(user, 'age', {
+  get: function() {
+    return this._age;
+  },
+  set: function(age) {
+    if ( age < 0 ) {
+      console.error('0보다 작은값은 올 수 없습니다.');
+    } else {
+      this._age = age;
+    }
+  },
+  enumerable: true
 });
+user.age = 10;
+console.log(user.age);
+user.age = -1;
 
-for (let key in user3) {
-  console.log(key);
+let user2 = {
+  get name() {
+    return this._name;
+  },
+  set name(val) {
+    if (val.length < 3) {
+      throw new Error('3자 이상이어야 합니다.'); 
+    } else {
+      this._name = val;
+    }
+  }
 }
-let user4 = { };
-Object.defineProperty(user4, 'name', {
-  value: 'jeado',
-  configurable: false
-});
-console.log(user4);
-Object.defineProperty(user4, "name", {
-  writable: true
-});
+user2.name = 'harin';
+console.log(user2.name);
+user2.name = 'ge';

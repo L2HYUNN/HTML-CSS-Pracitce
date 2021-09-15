@@ -1,22 +1,20 @@
-const printArguments = (...args) => {
-  let total = 0;
-  for( let i = 0; i < args.length; i++) {
-    total += args[i];
+function Teacher(name, age, subject) {
+  this.name = name;
+  this.age = age;
+  this.subject = subject;
+  this.teach = function (student) {
+    console.log(student + '에게' + this.subject + '를 가르칩니다.');
   }
-  return total;
-} 
-let result = printArguments(1, 2, 3);
+}
 
-console.log(result);
+const jay = new Teacher('jay', 30, 'JavaScript');
 
-function sum() {
-  let total = 0;
- for( let i = 0; i < arguments.length; i++) {
-    total += arguments[i];
-  }
-  return total;
-} 
-let result2 = sum(1, 2, 3);
+console.log(jay);
+jay.teach('bbo');
 
-console.log(result2);
+console.log(jay.constructor);
+console.log(jay instanceof Teacher);
 
+const jay2 = Teacher('jay2', 30, 'Math');
+console.log(jay2);
+console.log(subject);

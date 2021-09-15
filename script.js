@@ -1,50 +1,42 @@
-/*
-var sayName;
+let user = {
+  name: "jeado"
+};
+let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+console.log(descriptor);
 
-sayName();
+let user2 = {};
+Object.defineProperty(user2, 'name', 
+  {
+    value: 'jeado',
+    writable: false,
+    enumerable: true,
+    configurable: true
+  }
+);
+console.log(user2.name);
+user2.name = 'bbo';
+console.log(user2.name);
 
-sayName = function(){
-  console.log('yuddomack');
+let user3 = {
+  name: 'jeado',
+  toString() {
+    return this.name;
+  }
+};
+console.log(user3);
+Object.defineProperty(user3, 'toString', {
+  enumerable: false
+});
+
+for (let key in user3) {
+  console.log(key);
 }
-
-sayName();
-
-var sayName = function(){
-  console.log('yuddomack');
-}
-*/ 
-// var 변수의 호읻스팅 및 함수 변수 우선순위
-
-
-var myName = "hi";
-
-function myName() {
-  console.log("yuddomack");
-}
-function yourName() {
-  console.log("everyone");
-}
-
-var yourName = "bye";
-
-console.log(typeof myName);
-console.log(typeof yourName);
-
-// 결과 아래) 
-
-
-var myName;
-var yourName;
-function myName() {
-  console.log("yuddomack");
-}
-function yourName() {
-  console.log("everyone");
-}
-
-myName = "hi";
-yourName = "bye";
-
-console.log(typeof myName);
-console.log(typeof yourName);
-
+let user4 = { };
+Object.defineProperty(user4, 'name', {
+  value: 'jeado',
+  configurable: false
+});
+console.log(user4);
+Object.defineProperty(user4, "name", {
+  writable: true
+});

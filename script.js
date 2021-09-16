@@ -1,37 +1,20 @@
-function Storage() {
-  this.dataStore = {};
+class Cart {
+  constructor() {
+    this.store = {};
+  }
+
+  addProduct(product) {
+    this.store[product.id] = product;
+  }
+
+  getProduct(id) {
+    return this.store[id];
+  }
 }
 
-Storage.prototype.put = function(key, data) {
-  this.dataStore[key] = data;
-}
-Storage.prototype.getData = function(key) {
-  return this.dataStore[key];
-}
-Storage.prototype.name = 'haring';
+const cart1 = new Cart();
 
-const productStorage = new Storage();
-productStorage.put('id001', 'harin');
-console.log(productStorage.getData('id001'));
-console.log(productStorage.name);
-
-function RemovableStorage() {
-  Storage.call(this);
-}
-RemovableStorage.prototype = Object.create(Storage.prototype);
-RemovableStorage.prototype.removeAll = function () {
-  this.dataStore = {};
-}
-
-const productStorage2 = new RemovableStorage();
-productStorage2.put('id001', {name: '키보드', price: 2000});
-
-const item2 = productStorage2.getData('id001');
-console.log(item2);
-
-productStorage2.removeAll();
-
-const item3 = productStorage2.getData('id001');
-console.log(item3);
-
-
+cart1.addProduct({id: 1, name: "note book"});
+console.log(cart1.store);
+const product = cart1.getProduct(1);
+console.log(product);

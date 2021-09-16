@@ -1,20 +1,37 @@
-function Teacher(name, age, subject) {
-  this.name = name;
-  this.age = age;
-  this.subject = subject;
-  this.teach = function (student) {
-    console.log(student + '에게' + this.subject + '를 가르칩니다.');
-  }
+function Storage() {
+  this.dataStore = {};
 }
 
-const jay = new Teacher('jay', 30, 'JavaScript');
+Storage.prototype.put = function(key, data) {
+  this.dataStore[key] = data;
+}
+Storage.prototype.getData = function(key) {
+  return this.dataStore[key];
+}
+Storage.prototype.name = 'haring';
 
-console.log(jay);
-jay.teach('bbo');
+const productStorage = new Storage();
+productStorage.put('id001', 'harin');
+console.log(productStorage.getData('id001'));
+console.log(productStorage.name);
 
-console.log(jay.constructor);
-console.log(jay instanceof Teacher);
+function RemovableStorage() {
+  Storage.call(this);
+}
+RemovableStorage.prototype = Object.create(Storage.prototype);
+RemovableStorage.prototype.removeAll = function () {
+  this.dataStore = {};
+}
 
-const jay2 = Teacher('jay2', 30, 'Math');
-console.log(jay2);
-console.log(subject);
+const productStorage2 = new RemovableStorage();
+productStorage2.put('id001', {name: '키보드', price: 2000});
+
+const item2 = productStorage2.getData('id001');
+console.log(item2);
+
+productStorage2.removeAll();
+
+const item3 = productStorage2.getData('id001');
+console.log(item3);
+
+

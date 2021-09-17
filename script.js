@@ -1,46 +1,63 @@
-class Product {
-  static build(name, price) {
-    const id = Math.floor(Math.random() * 1000);
-    return new Product(id, name, price);
-  }
+// this.valueA = 'a';
+// console.log(valueA);
 
-  static getTaxPrice(product) {
-    return (product.price * 0.1) + product.price;
-  }
+// valueB = 'b';
+// console.log(this.valueB);
 
-  constructor(id, name, price) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
+function checkThis() {
+  console.log(this);
+}
+function checkThis2() {
+  "use strict";
+  console.log(this);
+}
+
+checkThis();
+checkThis2();
+
+function Product(name, price) {
+  this.name = name;
+  this. price = price;
+}
+const product1 = Product('가방', 2000);
+console.log(name);
+console.log(price);
+
+const product2 = {
+  name: '가방2',
+  price: 3000,
+  getVAT() {
+    return this.price / 10;
   }
 }
 
-class DeposableProduct extends Product {
-  depose() {
-    this.deposed = true;
+const valueOfProduct2 = product2.getVAT();
+console.log(valueOfProduct2);
+
+const calVAT = product2.getVAT ;
+const VAT2 = calVAT();
+console.log(VAT2);
+
+const counter1 = {
+  count: 0,
+  addAfter1Sec() {
+    const me = this;
+    console.log(me);
+    setTimeout(function () {
+      me.count += 1;
+      console.log(me.count);
+    }, 1000)
   }
-}
+};
+counter1.addAfter1Sec();
 
-const gum = Product.build('껌', 3000);
-console.log(gum);
-
-const clothes = new DeposableProduct(1, '옷', 2000);
-console.log(clothes);
-
-const taxPrice = DeposableProduct.getTaxPrice(clothes);
-console.log(taxPrice);
-
-class ProductWithCode {
-  static get CODE_PREFIX() {
-    return "PRODUCT-"
+const counter2 = {
+  count: 0,
+  addAfter1Sec() {
+    setTimeout(function () {
+      this.count += 1;
+      console.log(this.count);
+    }, 1000)
   }
-
-  constructor(id) {
-    this.id
-    this.code = ProductWithCode.CODE_PREFIX + id;
-  }
-}
-
-const product1 = new ProductWithCode('001');
-console.log(ProductWithCode.CODE_PREFIX);
-console.log(product1.code);
+};
+counter2.addAfter1Sec();

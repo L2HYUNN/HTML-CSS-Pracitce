@@ -1,17 +1,21 @@
-const str = '12345678';
-
-const fromArr = Array.from(str, el => el *2);
-
-console.log(fromArr);
-
-const capitals = `Prague,Czech Republic
-Copenhagen,Denmark
-Paris,France
-Madrid,Spain
-Rome,Italy`;
-
-capitals.split('\n').forEach(s => {
-  const capital = s.split(',')[0];
-  const country = s.split(',')[1];
-  console.log(`${capital} is in ${country}`);
-});
+const ship = {
+  max: 4,
+  passengers: [],
+  onBoard: function(name) {
+    if(this.passengers.length == this.max) {
+      console.log("This ship is full");
+      for(let i = 0; i < this.passengers.length; i++){
+        console.log(`${this.passengers[i]} is our passengers`);
+      }
+      return this.passengers
+    } else {
+      this.passengers.push(name);
+      console.log(`${name} on Board`);
+    }
+  }
+}
+ship.onBoard('nico');
+ship.onBoard('jiaho');
+ship.onBoard('yoyo');
+ship.onBoard('nodoka');
+ship.onBoard('muyako');

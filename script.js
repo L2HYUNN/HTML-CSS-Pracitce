@@ -1,16 +1,17 @@
-const sentences = ['  ABC abc', 'ABC abc    ', `  first 
-second third
-         forth
-sentence
+const str = '12345678';
 
-`];
+const fromArr = Array.from(str, el => el *2);
 
-const filterSentence = (sentences) => {
-  const filtered = [];
-  sentences.forEach((s) => {
-    filtered.push(s.trim());
-  });  
-  return filtered;
-}
+console.log(fromArr);
 
-console.log(filterSentence(sentences));
+const capitals = `Prague,Czech Republic
+Copenhagen,Denmark
+Paris,France
+Madrid,Spain
+Rome,Italy`;
+
+capitals.split('\n').forEach(s => {
+  const capital = s.split(',')[0];
+  const country = s.split(',')[1];
+  console.log(`${capital} is in ${country}`);
+});

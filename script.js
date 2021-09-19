@@ -1,26 +1,9 @@
-const result = {
-    floor: [],
-    ceil: [],
-    round: []
-}
-let max = 1000000000;
-for(let i = 0; i < max; i++) {
-  const rand = Math.random() * 10;
-  const f = Math.floor(rand);
-  const c = Math.ceil(rand);
-  const r = Math.round(rand);
-  
-  result.floor[f] = result.floor[f] + 1 || 1;
-  result.ceil[c] = result.ceil[c] + 1 || 1;
-  result.round[r] = result.round[r] + 1 || 1;
+Date.prototype.yyyymmdd = function () {
+  const yyyy = this.getFullYear();
+  const mm = this.getMonth() < 9 ? `0${this.getMonth() + 1}` : this.getMonth() + 1;
+  const dd = this.getDate() < 9 ? `0${this.getDate()}` : this.getDate();
+  return `${yyyy}/${mm}/${dd}`;
 }
 
-Object.keys(result).forEach(key => {
-  let data = result[key];
-  for(let i = 0; i < data.length; i ++){
-    data[i] = data[i] / max * 100 + '%';
-  }
-});
-console.log(result);
-
-
+const date = new Date();
+console.log(date.yyyymmdd());

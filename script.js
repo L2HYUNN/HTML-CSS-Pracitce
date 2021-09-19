@@ -1,11 +1,21 @@
-const str = "To lose your path is the way to find that path fuck you";
+const items = ['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't'];
+const seq = {
+  [Symbol.iterator]() {
+    let i = 0;
+    return {
+      next() {
+        const value = items[i];
+        i++;
+        const done = i > items.length;
+        return {value, done};
+      }
+    }
+  }
+};
 
-const sensitiveCaseRegex = /to/;
-const ignoreAllCaseRegex = /to/gi;
-const findRangeRegex = /([a-f])\w+/i;
-const findAllRangeRegex = /([a-f])\w+/gi;
-
-console.log(str.match(sensitiveCaseRegex));
-console.log(str.match(ignoreAllCaseRegex));
-console.log(str.match(findRangeRegex));
-console.log(str.match(findAllRangeRegex));
+for(let s of seq) console.log(s);
+const [a, b, c, ...arr] = seq;
+console.log('a >>> ', a);
+console.log('b >>> ', b);
+console.log('c >>> ', c);
+console.log('arr >>> ', arr);

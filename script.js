@@ -1,21 +1,13 @@
-const items = ['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't'];
-const seq = {
-  [Symbol.iterator]() {
-    let i = 0;
-    return {
-      next() {
-        const value = items[i];
-        i++;
-        const done = i > items.length;
-        return {value, done};
-      }
-    }
-  }
-};
+const str = 'Hello';
 
-for(let s of seq) console.log(s);
-const [a, b, c, ...arr] = seq;
-console.log('a >>> ', a);
-console.log('b >>> ', b);
-console.log('c >>> ', c);
-console.log('arr >>> ', arr);
+for (const item of str) {
+  console.log(item);
+}
+
+const iter = str[Symbol.iterator]();
+console.log(iter);
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());

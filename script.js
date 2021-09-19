@@ -1,22 +1,29 @@
-Date.daysdiff = (date1, date2) => {
-  if( !(date1 instanceof Date) || !(date2 instanceof Date) ) return " ";
+const testStringify = {
+  stringifiedNum: JSON.stringify(13.1),
+  stringifiedStr: JSON.stringify("Carnival"),
+  stringifiedBln: JSON.stringify(false),
+  stringifiedArr: JSON.stringify([2003, 2006]),
+};
 
-  const d1 = date1.getTime();
-  const d2 = date2.getTime();
-
-  let diff = d2 - d1;
-
-  const seconds = Math.floor( ( diff = diff / 1000 ) % 60 );
-  const minutes = Math.floor( ( diff = diff / 60 ) % 60 );
-  const hours = Math.floor( ( diff = diff / 60 ) % 24 );
-  const days = Math.floor( ( diff = diff / 24 ));
-  const years = Math.floor( diff / 365 );
-  return `${years} years ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+for ( let key in testStringify) {
+  console.log(`@@@@@@@ ${key} @@@@@@@`);
+  console.log(typeof testStringify[key]);
+  console.log(testStringify[key]);
 }
 
-const from = new Date(2000, 0 ,1);
-const to = new Date(2010, 0, 1);
+const obj = { 
+  drama: 'PET',
+  season: 2017,
+  casting: ['koyuki', 'matsumoto jun'],
+  character: ['sumire', 'momo']
+};
 
-console.log(from);
-console.log(to);
-console.log(Date.daysdiff(from ,to));
+const jsonObj = JSON.stringify(obj);
+console.log( typeof jsonObj );
+console.log( jsonObj );
+console.log(JSON.stringify(obj, ['drama', 'season']));
+console.log(JSON.stringify(obj, null, 4 )); 
+console.log(JSON.stringify(obj, (key, val) => {
+  if( val == 2017 ) return 2099;
+  return val; 
+}, 4));

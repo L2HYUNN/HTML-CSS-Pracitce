@@ -1,23 +1,14 @@
-const str = 'Hello';
+const map = new Map();
 
-for (const item of str) {
-  console.log(item);
-}
+map.set('one', 1);
+map.set('two', 2);
 
-const iter = str[Symbol.iterator]();
-console.log(iter);
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
+console.log(map);
 
-const product = [{name: '가방'}, {name: '노트북'}];
+console.log(map.get('one'));
+console.log(map.has('one'));
+map.delete('one');
+console.log(map);
 
-for (const item of product) {
-  console.log(item);
-}
-
-const productIter = product[Symbol.iterator]();
-console.log(productIter.next());
-console.log(productIter.next());
+console.log(map.has('one'));
+console.log(map.has('two'));

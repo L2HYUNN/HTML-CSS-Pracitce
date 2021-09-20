@@ -1,35 +1,26 @@
-const timer = {
-    run() {
-        if(this.t) console.log('이미 실행된 타이머가 있습니다.');
-
-        this.t = setTimeout(function() {
-            console.log('1초 뒤에 실행됩니다.');
-        }, 1000);
-    },
-
-    cancel() {
-        if(this.t) clearTimeout(this.t);
-        this.t = undefined;
-    }
+function promiseForHomeWork(mustDo) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('doing homework')
+            if(mustDo) {
+                resolve({
+                    result: 'homework-result'
+                });
+            } else {
+                reject( new Error('Too lazy'));
+            }
+        }, 3000);
+    });
 };
 
-timer.run();
-timer.cancel();
-timer.run();
+const promiseA = promiseForHomeWork(true);
+console.log('promiseA created');
 
-setTimeout(() => {
-    console.log('JavaScript');
-}, 0 );
+const promiseB = promiseForHomeWork();
+console.log('promiseB created');
 
-console.log('200제');
+promiseA.then(v => { console.log(v) });
 
-let count = 0;
-
-const IntervalTimer = setInterval(() => {
-    console.log(`we count ${count}`);
-    count++;
-    if ( count == 5 ) {
-        clearInterval(IntervalTimer);
-    }
-}, 1000);
-
+promiseB
+    .then(v => console.log(v))
+    .catch(e => console.error(e));

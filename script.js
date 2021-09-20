@@ -22,3 +22,14 @@ setTimeout(() => {
 }, 0 );
 
 console.log('200제');
+
+let count = 0;
+
+const IntervalTimer = setInterval(() => {
+    console.log(`we count ${count}`);
+    count++;
+    if ( count == 5 ) {
+        clearInterval(IntervalTimer);
+    }
+}, 1000);
+

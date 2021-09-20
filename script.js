@@ -1,26 +1,37 @@
-function promiseForHomeWork(mustDo) {
+function doJob(name, person) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            console.log('doing homework')
-            if(mustDo) {
+            if(person.stamina > 50) {
                 resolve({
-                    result: 'homework-result'
+                    result: `${name} success`,
+                    loss: 30
                 });
             } else {
-                reject( new Error('Too lazy'));
+                reject( new Error(`${name} failed`));
             }
-        }, 3000);
+        }, 1000);
     });
 };
 
-const promiseA = promiseForHomeWork(true);
-console.log('promiseA created');
+const harin = {stamina: 100};
 
-const promiseB = promiseForHomeWork();
-console.log('promiseB created');
-
-promiseA.then(v => { console.log(v) });
-
-promiseB
-    .then(v => console.log(v))
+doJob('work', harin)
+    .then(v => {
+        console.log(v.result);
+        harin.stamina -= v.loss;
+        console.log(`last stamina: ${harin.stamina}`);
+        return doJob('study', harin);
+    })
+    .then(v => {
+        console.log(v.result);
+        harin.stamina -= v.loss;
+        console.log(`last stamina: ${harin.stamina}`);
+        return doJob('work', harin);
+    })
+    .then(v => {
+        console.log(v.result);
+        harin.stamina -= v.loss;
+        console.log(`last stamina: ${harin.stamina}`);
+        return doJob('study', harin);
+    })
     .catch(e => console.error(e));

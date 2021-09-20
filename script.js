@@ -1,14 +1,24 @@
-const map = new Map();
+const timer = {
+    run() {
+        if(this.t) console.log('이미 실행된 타이머가 있습니다.');
 
-map.set('one', 1);
-map.set('two', 2);
+        this.t = setTimeout(function() {
+            console.log('1초 뒤에 실행됩니다.');
+        }, 1000);
+    },
 
-console.log(map);
+    cancel() {
+        if(this.t) clearTimeout(this.t);
+        this.t = undefined;
+    }
+};
 
-console.log(map.get('one'));
-console.log(map.has('one'));
-map.delete('one');
-console.log(map);
+timer.run();
+timer.cancel();
+timer.run();
 
-console.log(map.has('one'));
-console.log(map.has('two'));
+setTimeout(() => {
+    console.log('JavaScript');
+}, 0 );
+
+console.log('200제');

@@ -1,37 +1,20 @@
-function doJob(name, person) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if(person.stamina > 50) {
-                resolve({
-                    result: `${name} success`,
-                    loss: 30
-                });
-            } else {
-                reject( new Error(`${name} failed`));
-            }
-        }, 1000);
-    });
-};
+const div1E1 = document.getElementById('div1');
 
-const harin = {stamina: 100};
+console.log(div1E1.innerHTML);
 
-doJob('work', harin)
-    .then(v => {
-        console.log(v.result);
-        harin.stamina -= v.loss;
-        console.log(`last stamina: ${harin.stamina}`);
-        return doJob('study', harin);
-    })
-    .then(v => {
-        console.log(v.result);
-        harin.stamina -= v.loss;
-        console.log(`last stamina: ${harin.stamina}`);
-        return doJob('work', harin);
-    })
-    .then(v => {
-        console.log(v.result);
-        harin.stamina -= v.loss;
-        console.log(`last stamina: ${harin.stamina}`);
-        return doJob('study', harin);
-    })
-    .catch(e => console.error(e));
+console.log(div1E1.nodeType);
+console.log(div1E1.nodeType === Node.ELEMENT_NODE);
+console.log(div1E1.constructor);
+console.log(div1E1 instanceof HTMLDivElement);
+console.log(div1E1 instanceof HTMLElement);
+console.log(div1E1 instanceof Element);
+console.log(div1E1 instanceof Node);
+console.log(Element.prototype);
+console.log(div1E1.tagName);
+
+const div1El2 = document.querySelector('#div1');
+console.log(div1El2.innerHTML);
+
+const liEls = document.querySelectorAll('ul li');
+console.log(liEls.item(0).innerHTML);
+console.log(liEls.item(1).textContent);

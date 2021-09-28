@@ -1,20 +1,24 @@
-const div1E1 = document.getElementById('div1');
+const product = [
+    {id: 'p-01', name:' product01'},
+    {id: 'p-02', name:' product02'},
+    {id: 'p-03', name:' product03'}
+]
 
-console.log(div1E1.innerHTML);
+const productListE1 = document.getElementById('product-list');
 
-console.log(div1E1.nodeType);
-console.log(div1E1.nodeType === Node.ELEMENT_NODE);
-console.log(div1E1.constructor);
-console.log(div1E1 instanceof HTMLDivElement);
-console.log(div1E1 instanceof HTMLElement);
-console.log(div1E1 instanceof Element);
-console.log(div1E1 instanceof Node);
-console.log(Element.prototype);
-console.log(div1E1.tagName);
+product.map(product => {
+    const productItem = document.createElement('li');
 
-const div1El2 = document.querySelector('#div1');
-console.log(div1El2.innerHTML);
+    productItem.id = product.id;
+    productItem.innerHTML = product.name;
 
-const liEls = document.querySelectorAll('ul li');
-console.log(liEls.item(0).innerHTML);
-console.log(liEls.item(1).textContent);
+    return productItem;
+}).forEach(product => {
+    productListE1.appendChild(product);
+});
+
+setTimeout(() => {
+    const removeProduct = document.querySelector('ul li:nth-child(2)');
+    removeProduct.remove();
+}, 3000);
+

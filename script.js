@@ -1,24 +1,34 @@
-const product = [
-    {id: 'p-01', name:' product01'},
-    {id: 'p-02', name:' product02'},
-    {id: 'p-03', name:' product03'}
-]
+class NotificationBar {
+    constructor() {
+        this.barE1 = document.createElement('div');
+        this.barE1.style.display = 'none';
+        this.barE1.classList.add("notification-bar");
+        document.body.appendChild(this.barE1);
+    }
 
-const productListE1 = document.getElementById('product-list');
+    show(message, position = 'top') {
+        if(position === 'top'){
+            this.barE1.style.top = '10px';
+            this.barE1.style.bottom = '';
+        }
 
-product.map(product => {
-    const productItem = document.createElement('li');
+        if(position === 'bottom'){
+            this.barE1.style.top = '';
+            this.barE1.style.bottom = '10px';
+        }
+        this.barE1.style.left = '10px';
+        this.barE1.style.right = '10px';
+        this.barE1.style.display = '';
+        this.barE1.innerHTML = message;
+    }
+}
 
-    productItem.id = product.id;
-    productItem.innerHTML = product.name;
-
-    return productItem;
-}).forEach(product => {
-    productListE1.appendChild(product);
-});
+const noti = new NotificationBar();
 
 setTimeout(() => {
-    const removeProduct = document.querySelector('ul li:nth-child(2)');
-    removeProduct.remove();
-}, 3000);
+    noti.show('Welcome to JavaScript 200');
+}, 1000);
 
+setTimeout(() => {
+    noti.show('Welcome to JavaScript 200', 'bottom');
+}, 3000);

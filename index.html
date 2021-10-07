@@ -4,17 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      .notification-bar {
-        padding: 10px;
-        border: 1px solid black;
-        background-color: coral;
-        position: absolute;
-      }
-    </style>
-    <title>DOM 스타일 예제</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/1159a9ad7b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Fake Momentum</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <section class="main">
+      <div class="clock js-clock">
+        <span class="time js-time">00:00:00</span>
+        <span class="time-switch js-time-switch"></span>
+      </div>
+      <form class="todo_form js-todo_form">
+        <input
+          type="text"
+          placeholder="Tell me your Secrect Name"
+          class="todo js-todo"
+        />
+      </form>
+      <form class="todo_form__new js-todo_form__new"></form>
+      <div class="list-box">
+        <ul class="todo-list js-todo-list__pending"></ul>
+        <ul class="todo-list js-todo-list__deleting"></ul>
+      </div>
+    </section>
+
+    <script src="clock.js"></script>
+    <script src="greeting.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

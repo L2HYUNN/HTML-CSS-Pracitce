@@ -1,37 +1,99 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+
 html {
-  padding: 10px 10px;
+  background-color: blanchedalmond;
+  color: white;
+  font-family: "Montserrat", sans-serif;
 }
 
-header {
+/* clock.js */
+
+.main {
   display: flex;
-  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  flex-direction: column;
+  font-size: 150px;
 }
-
-nav ul {
+.clock {
   display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
-  list-style-type: none;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px black;
+}
+.time {
+  width: 520px;
 }
 
-li.home a {
-  color: red;
-  font-weight: bold;
+.time-switch {
+  font-size: 50px;
 }
 
-header + nav a {
-  font-size: 200%;
-  color: brown;
+/* app.js */
+.todo,
+.js-todo_new {
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+.todo:focus,
+.js-todo_new:focus {
+  outline: none;
+}
+.todo::placeholder,
+.js-todo_new::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
-ul *:first-child {
-  color: aqua;
+/* toDo List */
+.list-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  text-shadow: 1px 1px black;
+  margin-top: 50px;
 }
-
-.box-one {
-  background-color: aquamarine;
-  width: 100px;
-  height: 100px;
+.todo-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.todo-list span {
+  font-size: 50px;
+}
+.todo-list li span {
+  font-size: 35px;
+}
+.todo_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.todo_form span {
+  font-size: 70px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px black;
+}
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
+button {
+  border: none;
+  padding: 0px;
+  margin-left: 10px;
+}
+button:hover {
+  cursor: pointer;
 }

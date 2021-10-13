@@ -14,4 +14,8 @@ const clockTimes = () => {
     clock.innerHTML = `${hours}:${minutes}:${seconds}`;
 }
 
+clockTimes();
 setInterval(clockTimes, 1000);
+
+// String.padStart(2, "0")
+// String.padEnd(2, "0")

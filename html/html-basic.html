@@ -1,35 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My test page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+    <link href="../style2.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Mozilla is cool</h1>
-    <img
-      src="https://mdn.github.io/beginner-html-site/images/firefox-icon.png"
-    />
-    <p>At Mozilla, we’re a global community of</p>
-    <ul>
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
-    <p>
-      working together to keep the Internet alive and accessible, so people
-      worldwide can be informed contributors and creators of the Web. We believe
-      this act of human collaboration across an open platform is essential to
-      individual growth and our collective future.
-    </p>
-    <p>
-      Read the
-      <a href="https://www.mozilla.org/en-US/about/manifesto/"
-        >Mozilla Manifesto</a
-      >
-      to learn even more about the values and principles that guide the pursuit
-      of our mission.
-    </p>
+    <!-- Section for HTML -->
+    <section class="table" id="first">
+      <table>
+        <colgroup>
+          <col />
+          <col span="5" />
+        </colgroup>
+        <caption>
+          <p>
+            <strong> The Amaging Graph Prototype ver 1.0 </strong>
+          </p>
+        </caption>
+        <thead>
+          <tr>
+            <th>Blank</th>
+            <th>Food</th>
+            <th>Job</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2">Jone</th>
+            <td rowspan="2">Hot Rice</td>
+            <td rowspan="2">Programmer</td>
+            <td rowspan="2">24</td>
+            <td>Secreat Information</td>
+            <td rowspan="2">Naver Pay</td>
+          </tr>
+          <tr>
+            <td></td>
+            <!-- <td></td>
+            <td></td>
+            <td></td>
+            <td></td> -->
+          </tr>
+          <tr>
+            <th>Kay</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Nick</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Tom</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Karly</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="description">
+      <dl>
+        <dt>This is Example about HTML and CSS</dt>
+        <dd>This is just description list and title, date.</dd>
+      </dl>
+    </section>
+    <section class="image">
+      <figure>
+        <img
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBISEhgSFRIREhIRERgYGBgYGBISGhgRGBgZGRgYGBocIS4lHB4rHxgYJjgmKy80NTU1GiQ7QDszPy40NTEBDAwMDw4PHhISHj8hJCg/ND8xMzE/Mz8/Njg/Pzc0ND0xPT0/Pz80Nj0/Pz0/QDQ6Nj8xNz0+Pzo/MT82Nj8/O//AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQMEBQYCB//EADwQAAIBAgQDBgMGBAYDAQAAAAECAAMRBAUSITFBUQYTImFxgZGhsRQyQlJywSNi0fAHM2OCsuEWksIV/8QAGAEBAAMBAAAAAAAAAAAAAAAAAAECAwT/xAAfEQEAAgEEAwEAAAAAAAAAAAAAARECEiExUQMT0bH/2gAMAwEAAhEDEQA/APHoQhAIQhAIQiwEhFhAIQhAIQhAIQiwCEQmcEwO7wJnIMDAUNOhOFWdqsAhH0QTvuAecCLCO1qJXfiD9Y1AIQhAIQhAIQhASEIQCJFhASEIQCEIQCEIQCEIQOkW8tcPkrVE1K41dDwPvKpTNL2exI3U8YGbq02RirCzKbEREpk8AT6TVZ5lneDvEHjXiBzWV+SIC+/KBSspBsQQeh2iT0avlFDEU9LCzDgw4gzFZvlFTCvpcXU/dccGH7HygV0IsIBCEIHDRIrRIBFESKBA7E6UTlRO1gPJHVEaSPqIA6gixkBlsbdJYgSHiPvn2+kBmEWEBIQhAITpUg62gcwC34bxVW/pLLJ8M1SoFUc4FYREm67YZKi4RcRYLUR1VrbalbbfzBmGgJEixIBCEIBCEIBFXjCAgX+SUqdTwsAbwzLAnC1AVvof7vkeamV2VYnu6inleb2thqeKpaD+IbHo3IwK7LsYHUbznG5ZY9/SHm6j6j+ko0FShUNN9ijWPn0I8ps8nxII9YEXKsUDz4y0xOGStTNNwGVh/dj1lfmWVlGNakPNkHPzXz8p1gMaKgHl9YGJzvJXwzXsWpk+F/2boZVz2J6KVUKMoYMLEHgZ532k7PthW1rdqTHY8Sh6Hy84FDCEIHDRIGEAiiJOlgdKI4giIY8kDoLtHVnE7UwOiZAq/ePrJjNIlbj6wOIQgBAJ2Ft6xQLeskYbCs/AbwOcNhi58hxnGOK6tK8Bx9ZY4qoKNPSP8xvl5yopISfMwHKaFiAJ6L2SycU17wjcjiZT9msi1sCRLPtNnFh9jofpdh/wH7wJmY1kxz/ZrFqKNxG2phtqHpynnedZc2FrvRJvoOx6oRdT8DPTezGCWjS7x7CwLEngFHEzzftHmQxWKqVgLKxAT9Kiyk+tr+8CrhFiQEhCEAhCEAiwhAVDNf2ezOwAvwmUVS2wjuCrGnUF+R3EDc9oMq+0IK1MfxEXcfmXp6ynybHFTpO00WTY3Uo32Mr+0WTkE4ikPN1H/IfvA0GDxNx1lfm+A7s9/SHm6jp+YfvKnKMw1DSTNbgKoIsYFbgMXrW995JrOlam1NlBuLEHgRKjOMKcLUDptSqHb+V+JX06TvDYkMQwO4gY3PcnfCvbc03+43/yfOVZnp+YJTrUyjgEEfA8iPOeb4/CGlUKHcDgeogRIRYkAiiJO0QsbAEny3gAadhzyiVKbIbMrKehBEQQJCVT7x9XvxA4SIhjyGA/ovIuIWx/vhJaGN4pLi4FyD8jAhAR3h6xQNPrJGBwhqGBzhMKzkbS8rOmGp6jYuR4R5xx2p4WnrbiR4V6mZrE4h6z624ngOQHQQGndnYsxuzG5l92fyw1GBtIGBy9qjhQDueM21bEU8uoA2DV3FkXz/MfIQHM6zJcHS7mmR39ReP5FPP16Sq7L5a1RwzC+97neVmXYWpiapdyWLNdieZmux+Y08BTCJY13Gw/KPzGBW9vs6FNPsVM7kA1SOS8QnvxP/c8/m1zjIVfBviwLVUIdj+dSQGv5739pioCQixIBEixIBCEICwiRYD2Gezg+c0OaZX3lMVUHjUXI6iZlTNZkWY6gEPEbQIORY8odBPpNvgsYLAHe8x+f5O1Nu/QeBjdgPwnr6STkeNLWDEbQLPOMp7l+/pj+Gx8S/lY8/SS8uxgIG8uMNVV00GxUixB5iY/OFfB1bWJpvuj8v0N/MPmIGtxNJMRSam3BxseYYcCPMGYFsVUw9Q06gs6G3kw5MPWaDLM41ybmOCp4hdTqC1uMCqoY4ONt5QZ2hJuRt9JocNlwp7DhOsXlutTtA8/ZbRLSbmGFNNiCNjIoS/CAi0yeAJueQJ39poMkwZSqUYDUjFTbcagbGx5yDlp7u7kstuhK/SWPZ6t/ELHiTf3gaXtNliPhGbSA9JdannYcR7iYnLqNN30stw3xnpGLcVMPUH+m30M87yWmWqKPSA9/wCOVGrmihDHu9YJKrdOHM7m+20ZXKqlr2vbj5T0DAVQ+KNE3Crh0a4JFyWIIbrylrUwFMKT4VpqDcmwFusDyTQw25icVKu1pPz7F03qnuh4FuA35j19JUFrwHKFE1GsJpqKU8NT1uQDbYcyegjfZ7DJbWeMpM67w1TrPPwjkF5AQGcfjHrPrbh+EdBHsuwpdhtFy/LmqHhtLqviqeEGkAPVt93p6wLii9LB0+8e2r8K82boJla9ari6rVG3JOw5BeSiQ6tapiKmpyWYn2A6ATZZFl6U01vYKouSdoErDGng8MazjcL4RzLHgPjMngFqYzE63N2drnyHIDynXaDNmxlUKlxSQ2Qdf5jNX2UygUwHawAGokwO+3WLWhgUw6/erkD/AGJZmPxAHvPMpd9rM5+14lnX/LQaE/QD973O/wAJSQCJFiQCEIkAhCEAixIsAkrAYo03DfGRYQPS8uxiPTs1irDeVWbZE1EmtRuafEqOK+nlM9k+Ymm4Unwk/Ceh5fjAy2O6kfKBQZXnA2BNj9Ze1atOvT7twGB5Hex5TDdocEcPiDp/y38S25X4iaPJ0LIrA8oDtHLUptZdgeUuqFE6LdJHCHieIkxKu0CK9KxnXKP12B9ZHLWgUGf4AOOHKYhro1uYM9Dx9QEGYPMx/EJ6wEqYrWALWk3JEJqSpvLLA4eqaNSuj6UotTVxchj3hYAjyuvzkTMRymItvGqBqbUUa9R0Km2+kEWuZlcPVTCuyOQHQ2/oRLvs3Qd0DoAQXCcdy5XUPkDIXbHLzTqU8VoV1a4IN7Fk5Nbgd7yuvG6vc0zVr3IMMbNiX8DOAd9tNJb6b9OJPvM72q7UNib0aZ04dTuRsahHM/y9BK3Me0devT7o6UpniFvdvInp5Sol0EZoqLcxx6J06oYc2MDTZZUFOnc9JRZjiO8qX5XtOcTizawMjYcbwNx2c0ol7amtt6zPZjk1QVGcnUXYsfczTZEgp09bHlIj45XqWBuWOw8oDGVZalNe8cgKu5JlXnecmue7S60VPDgXPU+Use29bS1PDLsoph3A5sTtf4SFkeVl2DkbchAm9m8nuwYjeWXbfOBRp/Y6Z8bgGqR+FOSep+nrLHHYpMuoGobNVfZF6v1PkOJnmWIrPUdqjsWd2LMTzJgNwhCARIsSAQhCAkIQgEIQgLCEICgy/wAmzYqNLHhwmfnSG3tA02PqGtx3HLyl/wBmbKNJlBlbCoo6iXlCk1PkfUQNRVw4K3EiJTtHMFiPDuY866txwgQ6i9JV4usQbXlzVHyEoMwG8CsxlfwzKYt7sZf4xvDM7WXeA1Nf2UwSVMFie8fRRFWgaj81pprZtI5sdlA6sJmqOCqPSqVVW9Ojo1tceHWSq7eZFo7SxVZcO1IBhh6tVSx0mzVFGy6uexB0+QMz8kTnFRNbwtjNTcvScuRNNOrh00UcVicO1NRvodVqCovtoJPvO8zw3ed7TrFaeFqFiruVTRWUnQ6Am7dCBxBmFwOLzDCUUrJrXDuWKMQroHbwMwvcKeNr2vvx3knB97XcPVao7OLhn1HUtzupP4bg8NtpzY+HLVNTFd8y0nOK4QkykkkAhrMRcXswBtcX5SScoAmtw2X2AsLnoBeRcagAIE7WLK16AAI6CVDm0v8AFbA+hmerHeA2xvJmX2DXPASHDUeEC6zHOWcd2hso59Y52YplqwJ3sZSUqZY2E2XZ/CimNR26mBa5jkgxOINU7KiAfqtuZaYPC06KGq9lp01LEnkBH8vYVNl+7zPWZ3/EnMdCphENtY1vb8oPgHuQT7QMdn2bPi6xqtcLwRfypyHrzMrYGEAhCEBIQhAIkWJAIQhAIQhAWESEBYoMSKBAs8kxGmpbrN7gsQpAFwZ5q4tYjiJpsjzEMADxEDZ6AT/SSkBtK3DV7iWKVIDbraUePWxPrNG4BEpcxpb+ogY7HHl5yvFI3vYGxvYi4Nt7EcxLbF0r1LdfrHqGFEC2XJaRxrLhzoSvRZatG4BVKtLUlSlf7yByhtxUjpuG8PlTPgqOEULUFVKlUkWD0sQxAolkPiVboyFrW8RN9hIOORyQ+pg6KoVgSrKEFlsRuLATPPia5qqwqOalJQqMCQyqt9IBHqfjOb057b8d9tdePTR5UK32FHGJTC/ZsTUpsajGxpuoYo1MBtR1BvCy73MtaKNXp4d6aKKaisCyhkpqq1SAbt9wG5IU+g4TIY5cWi1DUa612Vqm6nU6kkFuYIJPDrG8DmFSyUi7GmjMUS/hVmN2Nuv9Zb0zdxMXf6jVFU9Zy1VAutRHdEPC9rkaRZjsdzKvOsLpa+nSHF7cLHmPj+0r8rx9ltfY2v523lhiMQXXTclRuPL0jHx5456rv4icomKpjs28IMzDneaLtC/LrM4ZuoICEID9Ovo4CW2AxVSqQpOwPASlpUyxsJtezGVXILCBtchoaKYNtyJ5L2ixr18XVqOCrGoy6T+FVOkL8vrPbMFTUbWOwH7/ANJ5j/iTlYpYoVl+5iVJI6OtgfiCvwMDHQhCARIsSAQhCARIQgEIQgEIQgEWEIBOqfGcxyglz9fSAjtb1nWGrlGBETEuCduUbXiPWBt8qzQOBvvNFhsQCJ5dTxJR7rsLzUZTm4bYmx6QNrSq325RnEoLH5SLhq95KqttAzWLoXf3j+GQc5LxFC/DiJns0zkUyaaDVUGxPJT+5gSM7xtOkLXu7cFH1PQTK/aqitrVrE+S/vI9R2ZizEsxO5POKTAm1c0eomhrXve45+3KQ1be4nNoXgaHKMbbYmXy4vwnfjMNh6tjxtLD/wDQ0ra94CZ3W1NaVU6q1CzXPOcqLwCOU6RaPJhSfOXeSZaztw9IDuSZTcgniZucFSWkFW12Yjby5n4SNh8OKCAkXYkgeotf6xmlWKV1dt9QUn/YzK3yZYGgBXDOWNwlRvEbsdDHg1vynf0Mx/8AimjsKDixpAuu3KobEX/2g2m1zdNVMttdBfrddr+vI+0oO2y/aMCXRVBBVXQcFqU91ZfVQR6W6QPJYQhAIQhASEWJASEIQCEIQCEIQCLEiwCPpsp89v6xgR4nwj4wI5O8AYNEgOPvHKTspuNjGQ0scK6ORqsHHsG9fOBd4TN2porOCb8LS+wWO7wauA85ncVj6dEhHourKODLa/mL8R5yux2fVKg0IO7U7bfePlfl7QLvtB2iC6qVE3c7M/JfIdT9JkcOpLj1vLLA9m8XV3Wi4U/ifwD57y6zGjh6VBcIvdviR4qjrvZiLadXw2gZJl5xCN5LoUSW0Eb3+dto1h0uxvxHLzgMNBTJFRRa3nI8BQJ2+3pOFnVY8PSAk6Rd40DJ+AqKGBNSmv60dvpA0WSZeXtcbGbTC5aqUrqSGqEIhHG7cWF+gufaZLKswwdNtVTENWPJQvd0/TQu7ehmzo5lcfaXXQApFGmfvEni7jly9oDOeBFqLST7tFACSbkud2JPM8JVuL1E/RV+F0/eK9UklmNyxJJ6mMB71D/Imn/e5Dv9E68YGmzLE2wy9aiqPa1z/fnKLviyVACbLTUuvHUq6bH6/OWeJwtSpSohRfSm+4HG37SLluGv3h5hAD+mzg/MiB5TiqOio6fldl9gbD5WjUs+0YH2p7fy3/VpH/UrIBCESAQMIQEhCEAhCEAhCEAhCEBY7+EekIQG2S+436zhRCEDtaRPD+kkpgKh3Cn23+kIQNBgMRVCinW01KYtZaoVwOW2rce00OEp4dCCuHomoN/4aK2gcy7nZfjeEIGd7U9pKlRu7puyU+eklSw9eNvKZdHYcCReEIDlOo4NwzX63N4jVGDFubcT59YQgNM5MTVCEA1GOMbgeUIQGpJw+Edxq2VBxdjpUe/M+Q3hCBcZfSwieIsKzjmfCgPkDufeXgzNLXZ1AA6/KEIEds0LuoQE7+FRsWPC/kPPlt76LLMD3hVTuFF3YCwLE3b4k29BCEDT4yuKVMnmBZR/NbYf30mZybGXqVfyimwv1cbn62iwgea5s+rEVD/qMP8A1On9pDhCAQhCAkIQgEIQgf/Z"
+          alt="any Image"
+          width="700px"
+          height="500px"
+          usemap="#fmap"
+        />
+        <figcaption>This is Nafla's Show~!</figcaption>
+      </figure>
+    </section>
+    <section class="link">
+      <a href="https://www.naver.com" target="_blank"> Naver </a>
+      <p>
+        <a href="#first"> Go to the Top of page </a>
+      </p>
+      <map name="fmap">
+        <area
+          shape="rect"
+          coords="0,0,300,300"
+          href="https://www.naver.com"
+          alt="인스타그램"
+          target="_blank"
+        />
+      </map>
+    </section>
+    <section class="form">
+      <form method="" name="new-form" action="">
+        <fieldset class="id-password-box">
+          <legend>ID and PASSWORD</legend>
+          <label for="id">ID</label>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            autocomplete
+            required
+            minlength="4"
+          />
+          <label for="password">PASSWORD</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            minlength="4"
+          />
+        </fieldset>
+        <fieldset class="radio-box">
+          <legend>Radio Box</legend>
+          <ul>
+            <li>
+              <label for="Grammer">Grammer</label>
+              <input type="radio" name="grammer" id="Grammer" />
+            </li>
+            <li>
+              <label for="Talking">Talking</label>
+              <input type="radio" name="grammer" id="Talking" />
+            </li>
+            <li>
+              <label for="Listening">Listening</label>
+              <input type="radio" name="grammer" id="Listening" />
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="check-box">
+          <legend>Check Box</legend>
+          <ul>
+            <li>
+              <label for="Grammer2">Grammer</label>
+              <input type="checkbox" name="grammer" id="Grammer2" />
+            </li>
+            <li>
+              <label for="Talking2">Talking</label>
+              <input type="checkbox" name="Talking" id="Talking2" />
+            </li>
+            <li>
+              <label for="Listening2">Listening</label>
+              <input type="checkbox" name="Listening" id="Listening2" />
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="test-box">
+          <legend>Test</legend>
+          <input
+            type="text"
+            size="9"
+            value="This is ID"
+            maxlength="15"
+            autofocus
+            readonly
+          />
+          <input
+            type="search"
+            placeholder="Search Something you like"
+            required
+          />
+          <input type="tel" placeholder="This is for Tel Number" required />
+          <input type="url" placeholder="This is for URL" required />
+          <input type="email" placeholder="This is for Email" required />
+
+          <!-- <input type="datetime" /> -->
+          <input type="datetime-local" value="2020-10-24T19:00" />
+          <input
+            type="date"
+            value="2020-10-24"
+            min="2020-10-23"
+            max="2020-10-30"
+          />
+          <input type="month" />
+          <input type="week" />
+          <input type="time" />
+
+          <input type="number" min="1" max="10" value="1" step="2" />
+          <input type="range" />
+          <input type="color" />
+          <input type="file" />
+
+          <input type="button" />
+          <input type="reset" />
+          <input type="submit" />
+        </fieldset>
+        <fieldset class="select-box">
+          <legend>Select Box</legend>
+          <select>
+            <optgroup label="공과대학">
+              <option value="archi">건축공학과</option>
+              <option value="mechanic">기계공학과</option>
+              <option value="indust">산업공학과</option>
+              <option value="elec">전자공학과</option>
+              <option value="computer">컴퓨터공학과</option>
+              <option value="chemical">화학공학과</option>
+            </optgroup>
+            <optgroup label="인문대학">
+              <option value="history">사학과</option>
+              <option value="lang">어문학과</option>
+              <option value="philo">철학과</option>
+            </optgroup>
+          </select>
+        </fieldset>
+        <fieldset class="datalist-box">
+          <legend>DataList Box</legend>
+          <input
+            type="text"
+            list="data"
+            placeholder="Choice or Write your job"
+          />
+          <datalist id="data">
+            <option value="police" label="경찰"></option>
+            <option value="scientist" label="과학자"></option>
+            <option value="lawyer" label="법률가"></option>
+            <option value="teacher" label="선생님"></option>
+          </datalist>
+        </fieldset>
+        <fieldset class="textarea-box">
+          <legend>TextArea Box</legend>
+          <textarea name="text" id="text" cols="" rows="10"></textarea>
+        </fieldset>
+      </form>
+    </section>
+    <!-- Section for CSS -->
+    <section class="font">
+      <p class="font-paragraph">
+        We can examine CSS font using lot of way to get some result we want
+        have.
+      </p>
+    </section>
+    <section class="text">
+      <p class="text-paragraph">
+        We can examine CSS font using lot of way to get some result we want
+        have.
+      </p>
+    </section>
+    <section class="list-style">
+      <ul class="list-style-ul">
+        <li>U item1</li>
+        <li>U item2</li>
+        <li>U item3</li>
+      </ul>
+      <ol class="list-style-ol">
+        <li>O item1</li>
+        <li>O item2</li>
+        <li>O item3</li>
+      </ol>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>
